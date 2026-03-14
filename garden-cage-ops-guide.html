@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Garden Cage Build Guide — Interactive Ops Doc</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- No external dependencies — system fonts only -->
 <style>
 /* ═══════════════════════════════════════════════
    DESIGN TOKENS — Garden palette
@@ -57,7 +56,7 @@ body {
     radial-gradient(ellipse at 15% 85%, rgba(58,107,42,0.045) 0%, transparent 55%),
     radial-gradient(ellipse at 85% 15%, rgba(139,94,60,0.05)  0%, transparent 55%);
   color: var(--ink);
-  font-family: 'Lora', Georgia, serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 14px;
   line-height: 1.7;
   min-height: 100vh;
@@ -79,7 +78,7 @@ body {
   background: var(--leaf);
   color: white;
   padding: 8px 16px;
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 12px;
   z-index: 9999;
   border-radius: 0 0 var(--radius) 0;
@@ -125,7 +124,7 @@ body {
 .masthead-icon { flex-shrink: 0; opacity: 0.88; }
 
 .masthead-title h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(18px, 2.8vw, 32px);
   font-weight: 900;
   color: var(--cream);
@@ -138,7 +137,7 @@ body {
 }
 
 .masthead-sub {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 9.5px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -167,7 +166,7 @@ body {
 
 /* Progress pill in header */
 .header-progress {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 10px;
   color: var(--cedar-lt);
   letter-spacing: 0.1em;
@@ -212,7 +211,7 @@ body {
   background: none;
   border: none;
   outline: none;
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 12px;
   color: var(--cream);
   letter-spacing: 0.04em;
@@ -224,7 +223,7 @@ body {
 }
 
 .search-count {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 10px;
   color: var(--seedling);
   white-space: nowrap;
@@ -238,7 +237,7 @@ body {
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: var(--radius-pill);
   color: rgba(255,255,255,0.4);
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 10px;
   padding: 3px 10px;
   cursor: pointer;
@@ -265,7 +264,7 @@ mark.search-hl {
   text-align: center;
   padding: 64px 20px;
   color: var(--faded);
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 12px;
 }
 
@@ -273,7 +272,7 @@ mark.search-hl {
 .no-results .nr-emoji { font-size: 48px; display: block; margin-bottom: 16px; }
 .no-results strong {
   display: block;
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 20px;
   font-style: italic;
   color: var(--cedar);
@@ -303,7 +302,7 @@ mark.search-hl {
 }
 
 .progress-label {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 9px;
   color: var(--gravel);
   white-space: nowrap;
@@ -352,7 +351,7 @@ mark.search-hl {
 }
 
 .progress-pct {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 11px;
   color: var(--seedling);
   min-width: 36px;
@@ -389,7 +388,7 @@ mark.search-hl {
 
 .ref-image-caption {
   padding: 10px 16px;
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 10px;
   color: var(--faded);
   letter-spacing: 0.04em;
@@ -442,7 +441,7 @@ mark.search-hl {
 }
 
 .toc-header-label {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 8.5px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -451,7 +450,7 @@ mark.search-hl {
 }
 
 .toc-group-label {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 8px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -479,7 +478,7 @@ mark.search-hl {
   cursor: pointer;
   border-left: 3px solid transparent;
   transition: all var(--transition);
-  font-family: 'Lora', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 12.5px;
   color: var(--faded);
   text-decoration: none;
@@ -580,7 +579,7 @@ mark.search-hl {
 .section-toggle:hover { background: #fbf8f3; }
 
 .section-toggle-num {
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 32px;
   font-weight: 900;
   color: var(--wire-lt);
@@ -594,7 +593,7 @@ mark.search-hl {
 .section-toggle-text { flex: 1; min-width: 0; }
 
 .section-toggle-title {
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 18px;
   font-weight: 700;
   color: var(--ink);
@@ -602,7 +601,7 @@ mark.search-hl {
 }
 
 .section-toggle-sub {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 10px;
   color: var(--faded);
   margin-top: 3px;
@@ -613,7 +612,7 @@ mark.search-hl {
   background: var(--soil);
   border-radius: var(--radius-pill);
   padding: 4px 12px;
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 9px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -664,12 +663,12 @@ mark.search-hl {
   border-radius: var(--radius);
   padding: 22px 26px;
   margin-bottom: 20px;
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   border: 1px solid rgba(139,94,60,0.2);
 }
 
 .spec-box-title {
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 16px;
   font-weight: 700;
   font-style: italic;
@@ -717,7 +716,7 @@ mark.search-hl {
 }
 
 .verdict h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 18px;
   font-weight: 700;
   font-style: italic;
@@ -726,7 +725,7 @@ mark.search-hl {
 }
 
 .verdict p {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 11px;
   line-height: 1.75;
   opacity: 0.9;
@@ -741,14 +740,14 @@ mark.search-hl {
   padding: 12px 16px;
   border-radius: 0 var(--radius) var(--radius) 0;
   margin-bottom: 20px;
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 11px;
   color: var(--ink);
   line-height: 1.7;
 }
 
 .note-box strong {
-  font-family: 'Lora', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 12px;
   color: var(--cedar);
 }
@@ -783,7 +782,7 @@ mark.search-hl {
   border-radius: var(--radius) var(--radius) 0 0;
 }
 .diagram-title {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 9.5px;
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -816,7 +815,7 @@ mark.search-hl {
   font-size: 11.5px;
   color: var(--faded);
   line-height: 1.5;
-  font-family: 'Lora', Georgia, serif;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 .diagram-note strong {
   color: var(--ink);
@@ -829,44 +828,19 @@ mark.search-hl {
 .svg-bed    { stroke: var(--wire); stroke-width: 1.5; fill: rgba(58,107,42,0.06); }
 .svg-dim    { stroke: var(--leaf-dark); stroke-width: 1.5; fill: none; marker-start: url(#arrow); marker-end: url(#arrow); }
 .svg-guide  { stroke: var(--wire); stroke-width: 1; stroke-dasharray: 5 5; fill: none; }
-.svg-label  { font: 11px 'DM Mono', monospace; fill: var(--ink); }
-.svg-label-soft  { font: 10px 'DM Mono', monospace; fill: var(--faded); letter-spacing: 0.06em; text-transform: uppercase; }
-.svg-label-accent { font: 11px 'DM Mono', monospace; fill: var(--leaf-dark); font-weight: 600; }
+.svg-label  { font: 11px ui-monospace, 'SF Mono', Menlo, Consolas, monospace; fill: var(--ink); }
+.svg-label-soft  { font: 10px ui-monospace, 'SF Mono', Menlo, Consolas, monospace; fill: var(--faded); letter-spacing: 0.06em; text-transform: uppercase; }
+.svg-label-accent { font: 11px ui-monospace, 'SF Mono', Menlo, Consolas, monospace; fill: var(--leaf-dark); font-weight: 600; }
 
-/* Legacy single-diagram fallback */
-.diagram-box {
-  background: var(--parchment);
-  border: 1px solid var(--wire-lt);
-  border-radius: var(--radius);
-  padding: 18px 22px;
-  margin-bottom: 16px;
-  overflow-x: auto;
-  position: relative;
-}
-.diagram-box::before {
-  content: '';
+/* ── Accessibility utility ── */
+.sr-only {
   position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--cedar), var(--leaf));
-  border-radius: var(--radius) var(--radius) 0 0;
-}
-.diagram-box h3 {
-  font-family: 'DM Mono', monospace;
-  font-size: 9.5px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--cedar);
-  margin-bottom: 14px;
-  font-weight: 500;
-}
-.diagram-box pre {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  line-height: 1.55;
-  color: var(--ink);
-  white-space: pre;
-  tab-size: 2;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ═══════════════════════════════════════════════
@@ -888,7 +862,7 @@ mark.search-hl {
 }
 
 .material-card h4 {
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 13.5px;
   font-weight: 700;
   color: var(--soil);
@@ -898,7 +872,7 @@ mark.search-hl {
 }
 
 .material-item {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 10.5px;
   color: var(--faded);
   padding: 4px 0;
@@ -990,7 +964,7 @@ mark.search-hl {
 .task-body { flex: 1; min-width: 0; }
 
 .task-title {
-  font-family: 'Lora', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-weight: 500;
   font-size: 13.5px;
   color: var(--ink);
@@ -999,7 +973,7 @@ mark.search-hl {
 }
 
 .task-note {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 10.5px;
   color: var(--faded);
   line-height: 1.65;
@@ -1013,7 +987,7 @@ mark.search-hl {
 }
 
 .tag {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 8.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1027,6 +1001,141 @@ mark.search-hl {
 .tag.warn { background: var(--rust-lt); border-color: #e8b090; color: var(--rust); }
 .tag.good { background: #dff0d8; border-color: #a8cc9a; color: var(--leaf); font-weight: 500; }
 .tag.opt  { background: #f0ecf8; border-color: #c8b8e0; color: #6a4a9a; }
+
+/* ═══════════════════════════════════════════════
+   SHOPPING LIST TABLE
+═══════════════════════════════════════════════ */
+.shop-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.shop-table thead {
+  background: var(--soil);
+  color: var(--cream);
+}
+.shop-table th {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 500;
+  border-bottom: 2px solid var(--cedar);
+}
+.shop-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--wire-lt);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.shop-table tr:last-child td { border-bottom: none; }
+.shop-table tr:nth-child(even) { background: var(--highlight); }
+.shop-table .qty {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-weight: 500;
+  color: var(--cedar);
+  white-space: nowrap;
+  text-align: center;
+}
+.shop-table .buy-note {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10.5px;
+  color: var(--faded);
+}
+
+/* ═══════════════════════════════════════════════
+   CRITICAL DECISIONS STRIP
+═══════════════════════════════════════════════ */
+.decisions-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.decision-card {
+  background: var(--soil);
+  border: 1px solid rgba(139,94,60,0.3);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  color: var(--cream);
+}
+.decision-label {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cedar-lt);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.decision-label::before {
+  content: '\26A0';
+  font-size: 11px;
+}
+.decision-answer {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.decision-why {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════
+   FAILURE POINTS PANEL
+═══════════════════════════════════════════════ */
+.failures-panel {
+  background: var(--rust-lt);
+  border: 1px solid #e8b090;
+  border-left: 4px solid var(--rust);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+}
+.failures-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--rust);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.failures-title::before {
+  content: '\1F6A7';
+  font-size: 16px;
+}
+.failure-item {
+  display: flex;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(184,74,26,0.12);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+.failure-item:last-child { border-bottom: none; }
+.failure-num {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--rust);
+  flex-shrink: 0;
+  min-width: 20px;
+  padding-top: 2px;
+}
+.failure-text strong { color: var(--rust); }
 
 /* ═══════════════════════════════════════════════
    COMPLETE BANNER
@@ -1058,7 +1167,7 @@ mark.search-hl {
 }
 
 .complete-banner h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 32px;
   font-weight: 900;
   font-style: italic;
@@ -1067,7 +1176,7 @@ mark.search-hl {
 }
 
 .complete-banner p {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   color: var(--faded);
   max-width: 380px;
   margin: 0 auto 24px;
@@ -1079,7 +1188,7 @@ mark.search-hl {
    BUTTONS
 ═══════════════════════════════════════════════ */
 .btn {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 10.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1112,7 +1221,7 @@ mark.search-hl {
 }
 
 .ctrl-bar-title {
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 22px;
   font-weight: 700;
   font-style: italic;
@@ -1125,7 +1234,7 @@ mark.search-hl {
 }
 
 .ctrl-btn {
-  font-family: 'DM Mono', monospace;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 9.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1200,6 +1309,67 @@ mark.search-hl {
   .material-grid { grid-template-columns: 1fr; }
   .diagram-grid { grid-template-columns: 1fr !important; }
   .masthead-title h1 { font-size: 18px; }
+}
+
+/* ═══════════════════════════════════════════════
+   PRINT — field-friendly output
+═══════════════════════════════════════════════ */
+@media print {
+  *, *::before, *::after { box-shadow: none !important; text-shadow: none !important; }
+  body { background: white; color: black; font-size: 11pt; line-height: 1.5; }
+
+  /* Hide interactive chrome */
+  .masthead, .progress-bar-wrap, .search-bar-wrap,
+  .sidebar, .sidebar-overlay, .menu-toggle,
+  .ctrl-bar, .complete-banner, .skip-link,
+  .search-clear, .header-progress { display: none !important; }
+
+  /* Layout: single column, no sidebar */
+  .layout { display: block; }
+  .main-content { padding: 0; }
+
+  /* Force all sections open */
+  .content-section { break-inside: avoid; border: 1px solid #ccc; margin-bottom: 12pt; }
+  .section-body { display: block !important; padding: 12pt 14pt; }
+  .toggle-chevron { display: none; }
+  .section-badge { border: 1px solid #999; background: white; color: black; }
+
+  /* Spec table */
+  .spec-box { background: white; color: black; border: 1px solid #999; }
+  .spec-box-title { color: #333; border-color: #ccc; }
+  .spec-table td:first-child { color: #555; }
+  .spec-table td:last-child { color: black; }
+  .spec-table tr { border-color: #ddd; }
+
+  /* Task cards — compact for paper */
+  .task-card { border: 1px solid #ccc; break-inside: avoid; padding: 6pt 8pt; }
+  .task-card.done .task-title { text-decoration: line-through; color: #999; }
+  .task-cb { width: 14px; height: 14px; border: 1.5px solid #666; }
+  .task-card.done .task-cb { background: #666; }
+  .tag { border: 1px solid #aaa; background: #f5f5f5; color: #333; }
+
+  /* Verdict / notes */
+  .verdict { background: #f0f0f0; color: black; }
+  .verdict h3 { color: #333; }
+  .verdict::after { display: none; }
+  .note-box { border-left-color: #666; background: #fafafa; }
+
+  /* Diagrams: keep SVG, ensure contrast */
+  .diagram-grid { grid-template-columns: repeat(3, 1fr); gap: 8pt; }
+  .diagram-card { border: 1px solid #ccc; break-inside: avoid; }
+  .diagram-card::before { display: none; }
+
+  /* Images: constrain and avoid page breaks */
+  .ref-image-wrap { break-inside: avoid; }
+  .ref-image-wrap img { max-height: 200pt; }
+
+  /* Shopping list table */
+  .shop-table { border-collapse: collapse; }
+  .shop-table th, .shop-table td { border: 1px solid #999; }
+
+  /* Links: show URL */
+  a[href]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #666; }
+  a.toc-item::after { content: none; }
 }
 </style>
 </head>
@@ -1701,6 +1871,27 @@ mark.search-hl {
           <strong>Mesh strategy:</strong> Hardware cloth only where it matters — lower 24" on all sides and lower half of doors. Do not overskin the whole structure unless animals prove they deserve escalation.
         </div>
 
+        <h3 style="font-family:Georgia,'Times New Roman',serif;font-size:16px;font-weight:700;color:var(--soil);margin:24px 0 12px;padding-top:16px;border-top:1px solid var(--wire-lt);">Shopping List — What to Buy</h3>
+        <table class="shop-table" aria-label="Shopping list with quantities and store notes">
+          <thead>
+            <tr><th>Item</th><th>Qty</th><th>Size / Spec</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2x4 pressure treated</td><td class="qty">4–5</td><td>8 ft</td><td class="buy-note">Cut to 72" for posts. 5th board for back center post if using 6-post layout.</td></tr>
+            <tr><td>2x2 or 2x3 lumber</td><td class="qty">4–5</td><td>8 ft</td><td class="buy-note">Lower frame rails + door frame stock. Buy extra — cheap insurance.</td></tr>
+            <tr><td>Cattle panel (16 ga)</td><td class="qty">2–3</td><td>16 ft x 50 in</td><td class="buy-note">3 ribs recommended. Most stores only sell full panels — no cutting at store.</td></tr>
+            <tr><td>&frac12;" hardware cloth</td><td class="qty">1 roll</td><td>36 in x 25 ft</td><td class="buy-note">25 ft covers lower band on all 4 sides + door panels. 50 ft roll if you want margin.</td></tr>
+            <tr><td>Exterior deck screws</td><td class="qty">1 box</td><td>2&frac12;"–3"</td><td class="buy-note">All framing connections. ~100 count box is enough.</td></tr>
+            <tr><td>Fender washers + short screws</td><td class="qty">1 bag</td><td>#8 x &frac34;"</td><td class="buy-note">For securing hardware cloth. Every 8–12" along edges. ~50 sets.</td></tr>
+            <tr><td>Staples (T50 or equivalent)</td><td class="qty">1 box</td><td>&frac38;"</td><td class="buy-note">For initial hardware cloth positioning before washer screws.</td></tr>
+            <tr><td>Galvanized wire</td><td class="qty">1 spool</td><td>16–18 ga</td><td class="buy-note">Cattle panel ties. Small spool is plenty.</td></tr>
+            <tr><td>Conduit clamps</td><td class="qty">12–18</td><td>&frac34;"–1"</td><td class="buy-note">Over wire for solid panel lock at each post contact. Match to panel wire gauge.</td></tr>
+            <tr><td>Heavy-duty hinges</td><td class="qty">4</td><td>3"–4" exterior</td><td class="buy-note">2 per door. Gate hinges or T-hinges. Exterior rated.</td></tr>
+            <tr><td>Hook &amp; eye latches</td><td class="qty">2</td><td>—</td><td class="buy-note">1 per door. Galvanized or stainless.</td></tr>
+            <tr><td>Cane bolt (optional)</td><td class="qty">1</td><td>—</td><td class="buy-note">Bottom of one door leaf to stop racking. Optional but useful.</td></tr>
+          </tbody>
+        </table>
+
       </div>
     </section>
 
@@ -1719,7 +1910,7 @@ mark.search-hl {
       </button>
       <div class="section-body" id="body-fasteners">
         <div class="task-list">
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Lumber connections — exterior deck screws</div>
@@ -1727,7 +1918,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Framing</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Hardware cloth — staple first, then fender washers</div>
@@ -1735,7 +1926,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Mesh</span><span class="tag warn">Don't skip washers</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Cattle panel — galvanized wire + conduit clamps</div>
@@ -1743,7 +1934,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Arch</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Door hardware — 2 hinges minimum, one latch per door</div>
@@ -1754,6 +1945,59 @@ mark.search-hl {
         </div>
       </div>
     </section>
+
+    <!-- ═════════════════════════════════════════
+         CRITICAL DECISIONS — decide these before cutting
+    ═════════════════════════════════════════ -->
+    <div style="margin-bottom:16px;">
+      <h3 style="font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:700;font-style:italic;color:var(--ink);margin-bottom:12px;">Critical Decisions — Decide Before Cutting</h3>
+      <div class="decisions-strip">
+        <div class="decision-card">
+          <div class="decision-label">Post count</div>
+          <div class="decision-answer">Go with 6 posts</div>
+          <div class="decision-why">Back center post costs one 2x4 and prevents wobble, racking, and panel droop. Skip it and you'll add it later anyway.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-label">Rib count</div>
+          <div class="decision-answer">3 ribs, not 2</div>
+          <div class="decision-why">Two ribs flex in wind. Three ribs make a rigid tunnel. The third panel costs ~$25 — worth it.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-label">Lower band height</div>
+          <div class="decision-answer">24 inches, no less</div>
+          <div class="decision-why">Rabbits jump 18". Squirrels climb from ground level. 24" with &frac12;" hardware cloth stops both. Below 24" and you'll be patching gaps all season.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-label">Door style</div>
+          <div class="decision-answer">Two doors, not one</div>
+          <div class="decision-why">Single wide door racks and sags. Two 22–24" doors on a center post stay square and latch cleanly. Each door is light enough to build flat on the ground.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-label">Post attachment</div>
+          <div class="decision-answer">Screw to bed sides</div>
+          <div class="decision-why">Burial is overkill for a raised bed cage. Screw posts directly to the outer bed frame. Easier to build, easier to remove if needed.</div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-label">Mesh fastening</div>
+          <div class="decision-answer">Staples + fender washers</div>
+          <div class="decision-why">Staples alone pull out within a season. Staple to position, then screw fender washers every 8–12". Two-step process — no shortcuts.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════════════════════════════════════════
+         COMMON FAILURE POINTS
+    ═════════════════════════════════════════ -->
+    <div class="failures-panel">
+      <div class="failures-title">Common Failure Points</div>
+      <div class="failure-item"><span class="failure-num">01</span><div class="failure-text"><strong>Staples only, no washers.</strong> Hardware cloth pulls free within one season. Animals find the gap. Fender washers every 8–12" are non-negotiable.</div></div>
+      <div class="failure-item"><span class="failure-num">02</span><div class="failure-text"><strong>Zip ties left as permanent fasteners.</strong> UV degrades them in months. Every structural tie must be galvanized wire. Zip ties are for mockup positioning only.</div></div>
+      <div class="failure-item"><span class="failure-num">03</span><div class="failure-text"><strong>Skipping the back mesh panel.</strong> "They won't get in from the back." They will. Hardware cloth the lower 24" on all four sides, no exceptions.</div></div>
+      <div class="failure-item"><span class="failure-num">04</span><div class="failure-text"><strong>Single wide door.</strong> A 44"+ single door racks, sags, and stops latching within weeks. Two narrower doors on a center post stay square.</div></div>
+      <div class="failure-item"><span class="failure-num">05</span><div class="failure-text"><strong>Not checking plumb before screwing off posts.</strong> A leaning post cascades into a crooked frame, misaligned doors, and panels that don't seat. Check both axes, brace, then fasten.</div></div>
+      <div class="failure-item"><span class="failure-num">06</span><div class="failure-text"><strong>Cutting before measuring the actual beds.</strong> DIY beds are rarely exact. Measure, mark your numbers on the sketch, then cut. Assumptions cost lumber.</div></div>
+      <div class="failure-item"><span class="failure-num">07</span><div class="failure-text"><strong>Unclipped wire edges.</strong> Cut hardware cloth and cattle panel ends are razor-sharp. Every edge gets clipped flush or bent back before anyone works near the structure.</div></div>
+    </div>
 
     <!-- ═════════════════════════════════════════
          SECTION 5: LAYOUT & POSTS — Day 1 AM
@@ -1770,7 +2014,7 @@ mark.search-hl {
       </button>
       <div class="section-body" id="body-layout">
         <div class="task-list">
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Measure actual outer dimensions of both beds</div>
@@ -1778,7 +2022,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag warn">Measure first</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Mark the final post footprint</div>
@@ -1786,7 +2030,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Layout</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Cut front posts to 72"</div>
@@ -1794,7 +2038,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Cut</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Set and brace front posts</div>
@@ -1802,7 +2046,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Structure</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Set rear posts</div>
@@ -1833,7 +2077,7 @@ mark.search-hl {
           <div class="ref-image-caption">Concept render — lower frame and mesh from the side</div>
         </div>
         <div class="task-list">
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Cut and attach lower side rails at 24"</div>
@@ -1841,7 +2085,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Lower Frame</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Cut and attach back lower rail at 24"</div>
@@ -1849,7 +2093,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Lower Frame</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Staple and screw hardware cloth — side zones</div>
@@ -1857,7 +2101,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Mesh</span><span class="tag warn">Fender washers required</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Staple and screw hardware cloth — back zone</div>
@@ -1865,7 +2109,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Mesh</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Check all wire edges — clip and fold sharp ends</div>
@@ -1899,7 +2143,7 @@ mark.search-hl {
           <strong>Cattle panel bending:</strong> A 16' cattle panel bent over a 4' span will reach about 72" at peak with a natural curve. Two people makes this significantly easier. Wear gloves — the cut ends are brutal.
         </div>
         <div class="task-list">
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Dry-fit first cattle panel rib — front position</div>
@@ -1907,7 +2151,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Arch</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Secure front rib to front posts with galvanized wire</div>
@@ -1915,7 +2159,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Arch</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Place and secure middle rib</div>
@@ -1923,7 +2167,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Arch</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Place and secure rear rib</div>
@@ -1931,7 +2175,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Arch</span><span class="tag good">3 ribs recommended</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Tie ribs together with connecting wire or rails</div>
@@ -1939,7 +2183,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Arch</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Replace any temp zip ties with wire</div>
@@ -1970,7 +2214,7 @@ mark.search-hl {
           <div class="ref-image-caption">Concept render — front frame with double doors</div>
         </div>
         <div class="task-list">
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Install front lower rails (left and right of door opening)</div>
@@ -1978,7 +2222,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Framing</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Apply hardware cloth to lower front zones</div>
@@ -1986,7 +2230,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Mesh</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Build door frames — two identical leaves</div>
@@ -1994,7 +2238,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Doors</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Apply mesh to door panels</div>
@@ -2002,7 +2246,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Mesh</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Hang doors with exterior hinges</div>
@@ -2010,7 +2254,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">Doors</span><span class="tag warn">Leave swing gap</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Install latches — hook-and-eye or gate latch</div>
@@ -2037,7 +2281,7 @@ mark.search-hl {
       </button>
       <div class="section-body" id="body-finish">
         <div class="task-list">
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Full wire edge audit — clip and fold all sharp ends</div>
@@ -2045,7 +2289,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag warn">Safety — do this</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Add optional bird netting over arch</div>
@@ -2053,7 +2297,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag opt">Optional</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Replace any remaining temporary zip ties</div>
@@ -2061,7 +2305,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag warn">Replace zip ties</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Test door operation — both leaves, both latches</div>
@@ -2069,7 +2313,7 @@ mark.search-hl {
               <div class="task-tags"><span class="tag">QC</span></div>
             </div>
           </div>
-          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0" onclick="toggleTask(this)" onkeydown="handleTaskKey(event,this)">
+          <div class="task-card" role="checkbox" aria-checked="false" tabindex="0">
             <div class="task-cb" aria-hidden="true">✓</div>
             <div class="task-body">
               <div class="task-title">Plant and set up seedling protection</div>
@@ -2083,7 +2327,7 @@ mark.search-hl {
           <span class="garden-emoji" aria-hidden="true">🥬</span>
           <h2>Build Complete</h2>
           <p>Structure is up, wire is safe, doors are hung, latches work, squirrels are defeated. Plant your stuff and stop building.</p>
-          <button class="btn primary" onclick="resetAll()">Reset All Tasks</button>
+          <button class="btn primary" id="resetBtn">Reset All Tasks</button>
         </div>
 
       </div>
@@ -2097,6 +2341,8 @@ mark.search-hl {
 ═══════════════════════════════════════════ -->
 <script>
 'use strict';
+
+const STORAGE_KEY = 'garden-cage-tasks-v1';
 
 /* ── SECTION TOGGLE ── */
 document.querySelectorAll('.section-toggle').forEach(btn => {
@@ -2163,7 +2409,6 @@ document.querySelectorAll('.toc-item').forEach(item => {
     const target   = document.getElementById(targetId);
     if (!target) return;
 
-    // Ensure section is open
     target.classList.add('open');
     target.querySelector('.section-toggle').setAttribute('aria-expanded', 'true');
 
@@ -2214,19 +2459,28 @@ const sectionObserver = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.content-section').forEach(s => sectionObserver.observe(s));
 
-/* ── TASK TOGGLE ── */
+/* ── TASK TOGGLE (delegated) ── */
+document.addEventListener('click', e => {
+  const card = e.target.closest('.task-card');
+  if (!card) return;
+  toggleTask(card);
+});
+
+document.addEventListener('keydown', e => {
+  const card = e.target.closest('.task-card');
+  if (!card) return;
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    toggleTask(card);
+  }
+});
+
 function toggleTask(card) {
   const isDone = card.classList.toggle('done');
   card.setAttribute('aria-checked', String(isDone));
   updateProgress();
   checkFinishComplete();
-}
-
-function handleTaskKey(e, card) {
-  if (e.key === 'Enter' || e.key === ' ') {
-    e.preventDefault();
-    toggleTask(card);
-  }
+  saveState();
 }
 
 /* ── PROGRESS ── */
@@ -2235,17 +2489,11 @@ function updateProgress() {
   const done = document.querySelectorAll('.task-card.done');
   const pct  = all.length ? Math.round((done.length / all.length) * 100) : 0;
 
-  // Sticky progress bar
   document.getElementById('progressFill').style.width = pct + '%';
   document.getElementById('progressPct').textContent  = pct + '%';
-
-  // Progress track ARIA
   document.getElementById('progressTrack').setAttribute('aria-valuenow', pct);
-
-  // Header pill
   document.getElementById('headerProgress').textContent = `${done.length} / ${all.length} tasks`;
 
-  // TOC section completion
   updateTocCompletion();
 }
 
@@ -2278,6 +2526,32 @@ function checkFinishComplete() {
   banner.classList.toggle('visible', tasks.length > 0 && done.length === tasks.length);
 }
 
+/* ── LOCALSTORAGE PERSISTENCE ── */
+function saveState() {
+  try {
+    const cards = document.querySelectorAll('.task-card');
+    const state = [];
+    cards.forEach(c => state.push(c.classList.contains('done') ? 1 : 0));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch(e) { /* storage unavailable — silent fail */ }
+}
+
+function restoreState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return;
+    const state = JSON.parse(raw);
+    const cards = document.querySelectorAll('.task-card');
+    if (state.length !== cards.length) return; // mismatch — skip
+    cards.forEach((c, i) => {
+      if (state[i]) {
+        c.classList.add('done');
+        c.setAttribute('aria-checked', 'true');
+      }
+    });
+  } catch(e) { /* silent fail */ }
+}
+
 /* ── RESET ── */
 function resetAll() {
   document.querySelectorAll('.task-card.done').forEach(c => {
@@ -2286,6 +2560,7 @@ function resetAll() {
   });
   updateProgress();
   document.getElementById('completeBanner').classList.remove('visible');
+  saveState();
 }
 
 /* ── REAL-TIME SEARCH ── */
@@ -2315,13 +2590,11 @@ function runSearch() {
 
   searchClear.classList.toggle('visible', raw.length > 0);
 
-  // Remove all previous highlights
   document.querySelectorAll('mark.search-hl').forEach(m => {
     m.outerHTML = m.innerHTML;
   });
 
   if (!query) {
-    // Reset — show all
     document.querySelectorAll('.content-section').forEach(s => s.classList.remove('hidden-by-search'));
     document.querySelectorAll('.toc-item').forEach(t => t.classList.remove('hidden-by-search'));
     searchCount.textContent = '';
@@ -2339,18 +2612,14 @@ function runSearch() {
 
     section.classList.toggle('hidden-by-search', !matches);
 
-    // Sync TOC item
     const tocId = 'toc-' + section.id.replace('section-', '');
     const tocEl = document.getElementById(tocId);
     if (tocEl) tocEl.classList.toggle('hidden-by-search', !matches);
 
     if (matches) {
       visibleCount++;
-      // Auto-open matched sections
       section.classList.add('open');
       section.querySelector('.section-toggle').setAttribute('aria-expanded', 'true');
-
-      // Highlight matches in searchable text nodes
       if (bodyEl) highlightInElement(bodyEl, query);
     }
   });
@@ -2362,7 +2631,7 @@ function runSearch() {
 function highlightInElement(el, query) {
   const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
     acceptNode: node => {
-      const skip = ['SCRIPT','STYLE','PRE'];
+      const skip = ['SCRIPT','STYLE','PRE','MARK'];
       if (skip.includes(node.parentElement.tagName)) return NodeFilter.FILTER_REJECT;
       return node.textContent.toLowerCase().includes(query)
         ? NodeFilter.FILTER_ACCEPT
@@ -2401,7 +2670,8 @@ function escapeHtml(str) {
 
 /* ── KEYBOARD SHORTCUT: / to focus search ── */
 document.addEventListener('keydown', e => {
-  if (e.key === '/' && document.activeElement !== searchInput) {
+  if (e.key === '/' && document.activeElement !== searchInput &&
+      document.activeElement.tagName !== 'INPUT') {
     e.preventDefault();
     searchInput.focus();
     searchInput.select();
@@ -2413,6 +2683,8 @@ document.addEventListener('keydown', e => {
 });
 
 /* ── INIT ── */
+document.getElementById('resetBtn').addEventListener('click', resetAll);
+restoreState();
 updateProgress();
 </script>
 </body>

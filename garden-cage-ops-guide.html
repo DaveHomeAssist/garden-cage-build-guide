@@ -756,6 +756,84 @@ mark.search-hl {
 /* ═══════════════════════════════════════════════
    ASCII DIAGRAMS
 ═══════════════════════════════════════════════ */
+/* ── Diagram SVG Grid ── */
+.diagram-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+@media (max-width: 900px) {
+  .diagram-grid { grid-template-columns: 1fr; }
+}
+.diagram-card {
+  background: var(--parchment);
+  border-radius: var(--radius);
+  border: 1px solid var(--wire-lt);
+  padding: 14px;
+  overflow: hidden;
+  position: relative;
+}
+.diagram-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cedar), var(--leaf));
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.diagram-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--cedar);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-weight: 500;
+}
+.diagram-title span:last-child {
+  font-size: 9px;
+  color: var(--faded);
+  letter-spacing: 0.12em;
+}
+.diagram-wrap {
+  border-radius: 6px;
+  border: 1px solid var(--wire-lt);
+  background: var(--cream);
+  padding: 10px;
+}
+.diagram-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.diagram-note {
+  margin-top: 10px;
+  font-size: 11.5px;
+  color: var(--faded);
+  line-height: 1.5;
+  font-family: 'Lora', Georgia, serif;
+}
+.diagram-note strong {
+  color: var(--ink);
+}
+
+/* SVG palette tokens (garden-themed) */
+.svg-frame  { stroke: var(--cedar); stroke-width: 2; fill: none; }
+.svg-mesh   { stroke: var(--leaf); stroke-width: 1.2; fill: none; opacity: 0.55; }
+.svg-panel  { stroke: var(--cedar-lt); stroke-width: 1.4; fill: none; }
+.svg-bed    { stroke: var(--wire); stroke-width: 1.5; fill: rgba(58,107,42,0.06); }
+.svg-dim    { stroke: var(--leaf-dark); stroke-width: 1.5; fill: none; marker-start: url(#arrow); marker-end: url(#arrow); }
+.svg-guide  { stroke: var(--wire); stroke-width: 1; stroke-dasharray: 5 5; fill: none; }
+.svg-label  { font: 11px 'DM Mono', monospace; fill: var(--ink); }
+.svg-label-soft  { font: 10px 'DM Mono', monospace; fill: var(--faded); letter-spacing: 0.06em; text-transform: uppercase; }
+.svg-label-accent { font: 11px 'DM Mono', monospace; fill: var(--leaf-dark); font-weight: 600; }
+
+/* Legacy single-diagram fallback */
 .diagram-box {
   background: var(--parchment);
   border: 1px solid var(--wire-lt);
@@ -765,7 +843,6 @@ mark.search-hl {
   overflow-x: auto;
   position: relative;
 }
-
 .diagram-box::before {
   content: '';
   position: absolute;
@@ -774,7 +851,6 @@ mark.search-hl {
   background: linear-gradient(90deg, var(--cedar), var(--leaf));
   border-radius: var(--radius) var(--radius) 0 0;
 }
-
 .diagram-box h3 {
   font-family: 'DM Mono', monospace;
   font-size: 9.5px;
@@ -784,7 +860,6 @@ mark.search-hl {
   margin-bottom: 14px;
   font-weight: 500;
 }
-
 .diagram-box pre {
   font-family: 'DM Mono', monospace;
   font-size: 11px;
@@ -1123,7 +1198,7 @@ mark.search-hl {
 
 @media (max-width: 520px) {
   .material-grid { grid-template-columns: 1fr; }
-  .diagram-box pre { font-size: 9.5px; }
+  .diagram-grid { grid-template-columns: 1fr !important; }
   .masthead-title h1 { font-size: 18px; }
 }
 </style>
@@ -1303,119 +1378,253 @@ mark.search-hl {
       </button>
       <div class="section-body" id="body-diagrams">
 
-        <div class="diagram-box">
-          <h3>Front Elevation — 96" wide × 72" peak</h3>
-          <pre aria-label="Front elevation ASCII diagram">
-                 FRONT ELEVATION
-              overall width = 96"
-              overall peak  = 72"
+        <!-- ── SVG Diagram Grid ── -->
+        <div class="diagram-grid">
 
-                   cattle panel arch
-                ______________________
-             .-'                      '-.
-           .'                            '.
-          /                                \
-         /                                  \
-        |          center post (2x4)         |
-        |                 ↕                  |
-        |---door A (22-24")--||--door B (22-24")---|
-        |                    ||                    |
-        |    open mesh       ||    open mesh       |
-        |                    ||                    |
-        |--(24" mesh break)--||-(24" mesh break)---|
-        | hardware cloth ½"  || hardware cloth ½"  |
-        +--------------------++--------------------+
-        |           raised beds (8' × 4')          |
-        +-------------------------------------------+
-      ↑left post                          right post↑
-       (2x4, 72")                          (2x4, 72")</pre>
+          <!-- FRONT ELEVATION -->
+          <div class="diagram-card">
+            <div class="diagram-title">
+              <span>Front Elevation</span>
+              <span>96&quot; W &middot; 72&quot; H</span>
+            </div>
+            <div class="diagram-wrap">
+              <svg viewBox="0 0 320 250" role="img" aria-label="Front elevation diagram of the cattle panel tunnel garden enclosure">
+                <defs>
+                  <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                    <path d="M0,4 L8,0 L8,8 Z" fill="#2d5421"></path>
+                  </marker>
+                </defs>
+                <!-- arch -->
+                <path class="svg-panel" d="M38 176 Q160 24 282 176"></path>
+                <path class="svg-panel" d="M48 176 Q160 40 272 176"></path>
+                <!-- outer frame -->
+                <line class="svg-frame" x1="38" y1="176" x2="38" y2="214"></line>
+                <line class="svg-frame" x1="282" y1="176" x2="282" y2="214"></line>
+                <line class="svg-frame" x1="38" y1="214" x2="282" y2="214"></line>
+                <!-- lower critter band -->
+                <rect x="38" y="176" width="244" height="38" class="svg-bed"></rect>
+                <!-- center post -->
+                <line class="svg-frame" x1="160" y1="104" x2="160" y2="214"></line>
+                <!-- door shoulders -->
+                <line class="svg-frame" x1="96" y1="120" x2="96" y2="214"></line>
+                <line class="svg-frame" x1="224" y1="120" x2="224" y2="214"></line>
+                <line class="svg-frame" x1="96" y1="120" x2="224" y2="120"></line>
+                <!-- doors -->
+                <rect x="98" y="122" width="60" height="90" class="svg-frame"></rect>
+                <rect x="162" y="122" width="60" height="90" class="svg-frame"></rect>
+                <line class="svg-frame" x1="98" y1="168" x2="158" y2="168"></line>
+                <line class="svg-frame" x1="162" y1="168" x2="222" y2="168"></line>
+                <!-- mesh lines lower -->
+                <line class="svg-mesh" x1="38" y1="186" x2="282" y2="186"></line>
+                <line class="svg-mesh" x1="38" y1="196" x2="282" y2="196"></line>
+                <line class="svg-mesh" x1="38" y1="206" x2="282" y2="206"></line>
+                <!-- dimensions -->
+                <line class="svg-guide" x1="38" y1="220" x2="38" y2="232"></line>
+                <line class="svg-guide" x1="282" y1="220" x2="282" y2="232"></line>
+                <line class="svg-dim" x1="44" y1="232" x2="276" y2="232"></line>
+                <text class="svg-label-accent" x="160" y="227" text-anchor="middle">96&quot; overall width</text>
+                <line class="svg-guide" x1="290" y1="176" x2="304" y2="176"></line>
+                <line class="svg-guide" x1="290" y1="214" x2="304" y2="214"></line>
+                <line class="svg-dim" x1="304" y1="180" x2="304" y2="210"></line>
+                <text class="svg-label-accent" x="296" y="199" text-anchor="end">24&quot;</text>
+                <line class="svg-guide" x1="18" y1="176" x2="32" y2="176"></line>
+                <line class="svg-guide" x1="18" y1="34" x2="32" y2="34"></line>
+                <line class="svg-dim" x1="18" y1="40" x2="18" y2="170"></line>
+                <text class="svg-label-accent" x="26" y="106">~72&quot;</text>
+                <!-- labels -->
+                <text class="svg-label-soft" x="160" y="18" text-anchor="middle">cattle panel arch</text>
+                <text class="svg-label-soft" x="160" y="245" text-anchor="middle">2 front doors meeting at center post</text>
+                <text class="svg-label-soft" x="18" y="172">lower critter band</text>
+              </svg>
+            </div>
+            <div class="diagram-note">
+              Front view shows the <strong>24&quot; hardware cloth band</strong>, the <strong>center front post</strong>, and twin doors sized to a <strong>44&ndash;48&quot; total opening</strong>.
+            </div>
+          </div>
+
+          <!-- SIDE ELEVATION -->
+          <div class="diagram-card">
+            <div class="diagram-title">
+              <span>Side Elevation</span>
+              <span>48&quot; D &middot; ~72&quot; Peak</span>
+            </div>
+            <div class="diagram-wrap">
+              <svg viewBox="0 0 320 250" role="img" aria-label="Side elevation diagram of the cattle panel tunnel garden enclosure">
+                <defs>
+                  <marker id="arrow-side" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                    <path d="M0,4 L8,0 L8,8 Z" fill="#2d5421"></path>
+                  </marker>
+                </defs>
+                <!-- arch -->
+                <path class="svg-panel" d="M34 176 Q160 34 286 176"></path>
+                <!-- lower frame -->
+                <line class="svg-frame" x1="34" y1="176" x2="286" y2="176"></line>
+                <line class="svg-frame" x1="34" y1="214" x2="286" y2="214"></line>
+                <line class="svg-frame" x1="34" y1="176" x2="34" y2="214"></line>
+                <line class="svg-frame" x1="286" y1="176" x2="286" y2="214"></line>
+                <!-- lower barrier -->
+                <rect x="34" y="176" width="252" height="38" class="svg-bed"></rect>
+                <!-- mesh lines -->
+                <line class="svg-mesh" x1="34" y1="186" x2="286" y2="186"></line>
+                <line class="svg-mesh" x1="34" y1="196" x2="286" y2="196"></line>
+                <line class="svg-mesh" x1="34" y1="206" x2="286" y2="206"></line>
+                <!-- dimension depth -->
+                <line class="svg-guide" x1="34" y1="220" x2="34" y2="232"></line>
+                <line class="svg-guide" x1="286" y1="220" x2="286" y2="232"></line>
+                <line class="svg-dim" x1="40" y1="232" x2="280" y2="232" marker-start="url(#arrow-side)" marker-end="url(#arrow-side)"></line>
+                <text class="svg-label-accent" x="160" y="227" text-anchor="middle">48&quot; depth</text>
+                <!-- dimension lower -->
+                <line class="svg-guide" x1="294" y1="176" x2="308" y2="176"></line>
+                <line class="svg-guide" x1="294" y1="214" x2="308" y2="214"></line>
+                <line class="svg-dim" x1="308" y1="180" x2="308" y2="210" marker-start="url(#arrow-side)" marker-end="url(#arrow-side)"></line>
+                <text class="svg-label-accent" x="300" y="199" text-anchor="end">24&quot;</text>
+                <!-- dimension peak -->
+                <line class="svg-guide" x1="16" y1="176" x2="30" y2="176"></line>
+                <line class="svg-guide" x1="16" y1="34" x2="30" y2="34"></line>
+                <line class="svg-dim" x1="16" y1="40" x2="16" y2="170" marker-start="url(#arrow-side)" marker-end="url(#arrow-side)"></line>
+                <text class="svg-label-accent" x="24" y="104">~72&quot;</text>
+                <text class="svg-label-soft" x="160" y="18" text-anchor="middle">side profile of tunnel arch</text>
+                <text class="svg-label-soft" x="160" y="245" text-anchor="middle">arch rises above 24&quot; lower framed wall</text>
+              </svg>
+            </div>
+            <div class="diagram-note">
+              Side view shows the tunnel profile over the <strong>4' depth</strong>. The lower wall is straight-framed, then the cattle panel takes over as the climbing tunnel.
+            </div>
+          </div>
+
+          <!-- TOP / PLAN VIEW -->
+          <div class="diagram-card">
+            <div class="diagram-title">
+              <span>Top / Plan View</span>
+              <span>3 Ribs Recommended</span>
+            </div>
+            <div class="diagram-wrap">
+              <svg viewBox="0 0 320 250" role="img" aria-label="Top view diagram of the cattle panel tunnel garden enclosure">
+                <defs>
+                  <marker id="arrow-top" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                    <path d="M0,4 L8,0 L8,8 Z" fill="#2d5421"></path>
+                  </marker>
+                </defs>
+                <!-- outer footprint -->
+                <rect x="46" y="54" width="228" height="132" class="svg-frame"></rect>
+                <!-- raised bed divider -->
+                <line class="svg-guide" x1="160" y1="54" x2="160" y2="186"></line>
+                <text class="svg-label-soft" x="160" y="48" text-anchor="middle">internal bed divider</text>
+                <!-- front door opening -->
+                <line class="svg-frame" x1="116" y1="54" x2="116" y2="78"></line>
+                <line class="svg-frame" x1="204" y1="54" x2="204" y2="78"></line>
+                <line class="svg-frame" x1="160" y1="54" x2="160" y2="78"></line>
+                <text class="svg-label-soft" x="160" y="92" text-anchor="middle">front double doors</text>
+                <!-- ribs -->
+                <line class="svg-panel" x1="88" y1="54" x2="88" y2="186"></line>
+                <line class="svg-panel" x1="160" y1="54" x2="160" y2="186"></line>
+                <line class="svg-panel" x1="232" y1="54" x2="232" y2="186"></line>
+                <text class="svg-label-accent" x="88" y="201" text-anchor="middle">rib 1</text>
+                <text class="svg-label-accent" x="160" y="201" text-anchor="middle">rib 2</text>
+                <text class="svg-label-accent" x="232" y="201" text-anchor="middle">rib 3</text>
+                <!-- side lower frame -->
+                <line class="svg-mesh" x1="46" y1="78" x2="274" y2="78"></line>
+                <line class="svg-mesh" x1="46" y1="162" x2="274" y2="162"></line>
+                <!-- dimensions -->
+                <line class="svg-guide" x1="46" y1="192" x2="46" y2="210"></line>
+                <line class="svg-guide" x1="274" y1="192" x2="274" y2="210"></line>
+                <line class="svg-dim" x1="52" y1="210" x2="268" y2="210" marker-start="url(#arrow-top)" marker-end="url(#arrow-top)"></line>
+                <text class="svg-label-accent" x="160" y="205" text-anchor="middle">96&quot; width</text>
+                <line class="svg-guide" x1="282" y1="54" x2="298" y2="54"></line>
+                <line class="svg-guide" x1="282" y1="186" x2="298" y2="186"></line>
+                <line class="svg-dim" x1="298" y1="60" x2="298" y2="180" marker-start="url(#arrow-top)" marker-end="url(#arrow-top)"></line>
+                <text class="svg-label-accent" x="290" y="124" text-anchor="end">48&quot;</text>
+              </svg>
+            </div>
+            <div class="diagram-note">
+              Plan view shows the enclosure as one <strong>8' &times; 4'</strong> unit over both beds. <strong>Three ribs</strong> give the best balance of stiffness and clean panel attachment.
+            </div>
+          </div>
+
         </div>
 
-        <div class="diagram-box">
-          <h3>Side Elevation — 48" deep × 72" peak</h3>
-          <pre aria-label="Side elevation ASCII diagram">
-              SIDE ELEVATION
-            overall depth = 48"
-            overall peak  = 72"
+        <!-- Post Layout + Door Detail (kept as compact cards below the grid) -->
+        <div class="diagram-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
 
-            front                      back
-              |                          |
-              ↓                          ↓
-             ____________________________
-          .-'                            '-.
-        .'                                  '.
-       /         arch rise ≈ 48"              \
-      |                                        |
-      |                                        |
-      |----------------------------------------| ← 24" sidewall top
-      |         hardware cloth lower zone      |
-      +----------------------------------------+
-      |            raised bed below            |
-      +----------------------------------------+</pre>
-        </div>
+          <!-- POST LAYOUT -->
+          <div class="diagram-card">
+            <div class="diagram-title">
+              <span>Post Layout</span>
+              <span>6-Post Recommended</span>
+            </div>
+            <div class="diagram-wrap">
+              <svg viewBox="0 0 320 180" role="img" aria-label="Post layout diagram showing recommended 6-post placement">
+                <!-- bed outline -->
+                <rect x="30" y="30" width="260" height="120" class="svg-frame"></rect>
+                <line class="svg-guide" x1="160" y1="30" x2="160" y2="150"></line>
+                <!-- front posts -->
+                <circle cx="30" cy="30" r="7" fill="none" class="svg-frame"></circle>
+                <circle cx="160" cy="30" r="7" fill="none" class="svg-frame"></circle>
+                <circle cx="290" cy="30" r="7" fill="none" class="svg-frame"></circle>
+                <!-- back posts -->
+                <circle cx="30" cy="150" r="7" fill="none" class="svg-frame"></circle>
+                <circle cx="160" cy="150" r="7" fill="none" stroke-dasharray="4 3" class="svg-frame"></circle>
+                <circle cx="290" cy="150" r="7" fill="none" class="svg-frame"></circle>
+                <!-- labels -->
+                <text class="svg-label-soft" x="30" y="18" text-anchor="middle">front L</text>
+                <text class="svg-label-soft" x="160" y="18" text-anchor="middle">center</text>
+                <text class="svg-label-soft" x="290" y="18" text-anchor="middle">front R</text>
+                <text class="svg-label-soft" x="30" y="172" text-anchor="middle">back L</text>
+                <text class="svg-label-soft" x="160" y="172" text-anchor="middle">back C (opt)</text>
+                <text class="svg-label-soft" x="290" y="172" text-anchor="middle">back R</text>
+              </svg>
+            </div>
+            <div class="diagram-note">
+              Back-center post is optional but improves <strong>symmetry</strong>, <strong>panel attachment</strong>, and reduces wobble.
+            </div>
+          </div>
 
-        <div class="diagram-box">
-          <h3>Top View — Rib Placement</h3>
-          <pre aria-label="Top view rib placement diagram">
-              TOP VIEW — 96" × 48"
+          <!-- SINGLE DOOR -->
+          <div class="diagram-card">
+            <div class="diagram-title">
+              <span>Single Door</span>
+              <span>22&ndash;24&quot; W &middot; ~54&quot; H</span>
+            </div>
+            <div class="diagram-wrap">
+              <svg viewBox="0 0 320 250" role="img" aria-label="Single door elevation showing frame members and mesh zones">
+                <!-- door frame -->
+                <rect x="90" y="40" width="140" height="180" class="svg-frame"></rect>
+                <!-- slight arch at top -->
+                <path class="svg-panel" d="M90 40 Q160 20 230 40"></path>
+                <!-- middle rail -->
+                <line class="svg-frame" x1="90" y1="130" x2="230" y2="130"></line>
+                <!-- upper mesh lines -->
+                <line class="svg-mesh" x1="90" y1="70" x2="230" y2="70"></line>
+                <line class="svg-mesh" x1="90" y1="100" x2="230" y2="100"></line>
+                <!-- lower mesh (hardware cloth) -->
+                <line class="svg-mesh" x1="90" y1="150" x2="230" y2="150"></line>
+                <line class="svg-mesh" x1="90" y1="165" x2="230" y2="165"></line>
+                <line class="svg-mesh" x1="90" y1="180" x2="230" y2="180"></line>
+                <line class="svg-mesh" x1="90" y1="195" x2="230" y2="195"></line>
+                <line class="svg-mesh" x1="90" y1="210" x2="230" y2="210"></line>
+                <!-- labels -->
+                <text class="svg-label-soft" x="160" y="102" text-anchor="middle">open mesh / wire</text>
+                <text class="svg-label-soft" x="160" y="174" text-anchor="middle">&frac12;&quot; hardware cloth</text>
+                <text class="svg-label-accent" x="160" y="126" text-anchor="middle">middle rail</text>
+                <!-- hinges -->
+                <rect x="82" y="60" width="8" height="14" rx="2" fill="none" class="svg-frame"></rect>
+                <rect x="82" y="186" width="8" height="14" rx="2" fill="none" class="svg-frame"></rect>
+                <text class="svg-label-soft" x="78" y="54" text-anchor="end">hinges</text>
+                <!-- latch -->
+                <circle cx="224" cy="130" r="4" fill="none" class="svg-frame"></circle>
+                <text class="svg-label-soft" x="238" y="134">latch</text>
+                <!-- dim -->
+                <line class="svg-guide" x1="240" y1="40" x2="256" y2="40"></line>
+                <line class="svg-guide" x1="240" y1="220" x2="256" y2="220"></line>
+                <line class="svg-dim" x1="256" y1="46" x2="256" y2="214" marker-start="url(#arrow)" marker-end="url(#arrow)"></line>
+                <text class="svg-label-accent" x="250" y="134" text-anchor="end">~54&quot;</text>
+              </svg>
+            </div>
+            <div class="diagram-note">
+              Each door: <strong>2 stiles, 3 rails</strong> (top, middle, bottom). <strong>2 heavy-duty hinges</strong> min. Hook-and-eye or gate latch.
+            </div>
+          </div>
 
-   front edge
-      ↓
-   +------[ door opening 44-48" ]------+
-   |                                   |
-   |  rib 1 (front)                    |
-   |    |   rib 2 (mid)                |
-   |    |     |   rib 3 (back)         |
-   |    |     |     |                  |
-   |                                   |
-   |--------bed divider----------------|
-   |                                   |
-   +-----------------------------------+
-                        ↑
-                     back edge
-
-   Tie ribs with galvanized wire or fence ties.
-   Zip ties OK for mockup — replace after.</pre>
-        </div>
-
-        <div class="diagram-box">
-          <h3>Post Layout (Recommended 6-Post)</h3>
-          <pre aria-label="Post layout diagram">
-   FRONT                              BACK
-   [L post] [Center post] [R post]   [BL post] [BC post] [BR post]
-
-   Use back-center post if you want:
-     → better cattle panel attachment
-     → cleaner symmetry
-     → less wobble</pre>
-        </div>
-
-        <div class="diagram-box">
-          <h3>Single Door — 22-24" wide × ~54" tall</h3>
-          <pre aria-label="Single door elevation diagram">
-            SINGLE DOOR ELEVATION
-           22" – 24" wide | ~54" tall
-
-              _________
-           .-'         '-.    ← slight curve at top (freehand it)
-         .'               '.
-        |                   |
-        |   upper open      |
-        |   mesh / wire     |
-        |                   |
-        |-------------------| ← middle rail
-        |  ½" hardware      |
-        |  cloth lower      |
-        |                   |
-        +-------------------+
-
-   Frame members per door:
-     · 2 vertical stiles
-     · top rail
-     · middle rail (splits mesh zones)
-     · bottom rail
-   Hinges: 2 minimum, heavy duty
-   Latch: hook-and-eye or gate latch</pre>
         </div>
 
         <div class="ref-image-wrap inline">
